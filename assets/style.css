@@ -422,6 +422,36 @@ body {
     display: none;
   }
 }
+.olio-header-menu-mobile {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #646556;
+}
+.olio-header-menu-mobile-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+.olio-header-menu-mobile__close {
+  position: absolute;
+  top: 18px;
+  right: 15px;
+  cursor: pointer;
+}
+.olio-header-menu-mobile__menu {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.olio-header-menu-mobile__menu .olio-header-nav__item {
+  text-align: center;
+}
 .olio-catalog {
   padding-top: 40px;
   padding-bottom: 28px;
