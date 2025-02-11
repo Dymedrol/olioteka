@@ -73,6 +73,8 @@
   {%- endif -%}
 
   {% assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' %}
+
+    {% comment %}
   <div class="page-width">
     <div class="product product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
       <div class="grid__item product__media-wrapper">
@@ -722,6 +724,50 @@
       {{ product | structured_data }}
     </script>
   </div>
+  {% endcomment %}
+
+    <section class="olio-product">
+        <div class="container">
+            <div class="olio-product-breadcrumb">
+                <a href="/" class="olio-product-breadcrumb-link">Shop</a> / <a href="/" class="olio-product-breadcrumb-link">Extra Virgin Olive Oils</a>
+            </div>
+            <div class="olio-product-content">
+                <div class="olio-product-gallery">
+                    <div class="olio-product-gallery__big-image">
+                        <img src="{{ 'pic1.png' | asset_url }}" alt="">
+                    </div>
+                    <div class="olio-product-gallery__thumbnails">
+                        <img src="{{ 'pic1.png' | asset_url }}" alt="" class="olio-product-gallery__thumbnail">
+                        <img src="{{ 'pic1.png' | asset_url }}" alt="" class="olio-product-gallery__thumbnail">
+                        <img src="{{ 'pic1.png' | asset_url }}" alt="" class="olio-product-gallery__thumbnail">
+                        <img src="{{ 'pic1.png' | asset_url }}" alt="" class="olio-product-gallery__thumbnail">
+                        <img src="{{ 'pic1.png' | asset_url }}" alt="" class="olio-product-gallery__thumbnail">
+                    </div>
+                </div>
+                <div class="olio-product-info">
+                    <div class="olio-product-info__title">Oleoestepa Estepa Extra Super Puper Virgen w/ Box</div>
+                    <div class="olio-product-info__location">
+                        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16.0416 8.70834C16.0416 11.4932 14.2083 14.6667 10.9999 18.3333C7.79159 14.6667 5.95825 11.4932 5.95825 8.70834C5.95825 7.37121 6.48943 6.08884 7.43492 5.14334C8.38042 4.19785 9.66279 3.66667 10.9999 3.66667C12.3371 3.66667 13.6194 4.19785 14.5649 5.14334C15.5104 6.08884 16.0416 7.37121 16.0416 8.70834Z" stroke="#646556" stroke-linejoin="round"/>
+                        </svg>
+                        <span>Barcelona, Spain</span>
+                    </div>
+                    <div class="olio-product-info__variants">
+                        <div class="olio-product-info__variants-price">EUR 250</div>
+                        <div class="olio-product-info__variants-choice">
+                            <div class="olio-product-info__variants-choice-item olio-product-info__variants-choice-item_active"><span>500 ml</span></div>
+                            <div class="olio-product-info__variants-choice-item"><span>1000 ml</span></div>
+                        </div>
+                    </div>
+                    <div class="olio-product-info__add-to-cart">Add to cart</div>
+                    <div class="olio-product-info__description">
+                        This medium robust-intensity extra virgin olive oil produced from Hojiblanca olives has notable aromas of green herbs and tomato vine. Gold award winner in 2020 from Olive Japan. Try pairing with leafy green salads and garden salads.
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
 </product-info>
 
 {% schema %}
