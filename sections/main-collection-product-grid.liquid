@@ -36,6 +36,8 @@
   }
 {%- endstyle -%}
 
+
+{% comment %}
 <div class="section-{{ section.id }}-padding gradient color-{{ section.settings.color_scheme }}">
   {%- paginate collection.products by section.settings.products_per_page -%}
     {% comment %} Sort is the first tabbable element when filter type is vertical {% endcomment %}
@@ -194,6 +196,175 @@
     {{ 'mask-arch.svg' | inline_asset_content }}
   {%- endif -%}
 </div>
+{% endcomment %}
+
+<section class="olio-catalog">
+  <div class="container">
+    <div class="olio-catalog-title__wrapper">
+      <h1 class="olio-catalog-title">Explore olive oil<br/>boutique</h1>
+    </div>
+    <div class="olio-catalog-categories">
+      <a href="/" class="olio-catalog-categories__item">Shop All</a>
+      <a href="/" class="olio-catalog-categories__item olio-catalog-categories__item_active">Extra Vergin olive oils</a>
+      <a href="/" class="olio-catalog-categories__item">Fine food</a>
+      <a href="/" class="olio-catalog-categories__item">Cosmetics</a>
+      <a href="/" class="olio-catalog-categories__item">Ceramics and Glassware</a>
+      <a href="/" class="olio-catalog-categories__item">gifts boxes</a>
+    </div>
+    <div class="olio-catalog-info">
+      <div class="olio-catalog-info__title">Extra Virgin Olive Oils</div>
+      <div class="olio-catalog-info__text">It is a space dedicated to extra virgin olive oil, created by Inna Uzberg, a certified olive oil sommelier. OLIOTEKA is an online boutique, olive oil guide, and expert resource for professionals and lovers of authentic, high-quality olive oil.
+        <br/>Here, we celebrate olive oil as a cornerstone of health and flavor, inspiring exploration, learning, and well-being.</div>
+    </div>
+    <div class="olio-catalog-filters">
+      <div class="olio-catalog-filters-tags">
+        <div class="olio-catalog-filters-tags__item olio-catalog-filters-tags__item_active">All</div>
+        <div class="olio-catalog-filters-tags__item">For Salads</div>
+        <div class="olio-catalog-filters-tags__item">For Frying</div>
+        <div class="olio-catalog-filters-tags__item">For Everything</div>
+      </div>
+      <div class="olio-catalog-filters-sorting">Sort: A-Z
+        <svg width="8" height="10" viewBox="0 0 8 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path id="Arrow 1" d="M4.5 0.5C4.5 0.223858 4.27614 1.20706e-08 4 0C3.72386 -1.20706e-08 3.5 0.223858 3.5 0.5L4.5 0.5ZM3.64645 9.85355C3.84171 10.0488 4.15829 10.0488 4.35355 9.85355L7.53553 6.67157C7.7308 6.47631 7.7308 6.15973 7.53553 5.96447C7.34027 5.7692 7.02369 5.7692 6.82843 5.96447L4 8.79289L1.17157 5.96447C0.97631 5.7692 0.659728 5.7692 0.464466 5.96447C0.269204 6.15973 0.269204 6.47631 0.464466 6.67157L3.64645 9.85355ZM3.5 0.5L3.5 9.5L4.5 9.5L4.5 0.5L3.5 0.5Z" fill="#212A17"/>
+        </svg>
+      </div>
+    </div>
+    <div class="olio-catalog-grid">
+      <a href="/" class="olio-product-card">
+        <div class="olio-product-card-pic-wrapper">
+          <img src="{{ 'pic1.png' | asset_url }}" alt="" class="olio-product-card-pic1">
+          <img src="{{ 'pic2.png' | asset_url }}" alt="" class="olio-product-card-pic2">
+        </div>
+        <div class="olio-product-card-info">
+          <div class="olio-product-card-info__title">Huile d'olive vierge extra</div>
+          <div class="olio-product-card-info__subtitle">CHÂTEAU D'ESTOUBLON | 50 cl</div>
+          <div class="olio-product-card-info__price">from 99,80 €</div>
+        </div>
+      </a>
+      <a href="/" class="olio-product-card">
+        <div class="olio-product-card-pic-wrapper">
+          <img src="{{ 'pic1.png' | asset_url }}" alt="" class="olio-product-card-pic1">
+          <img src="{{ 'pic2.png' | asset_url }}" alt="" class="olio-product-card-pic2">
+        </div>
+        <div class="olio-product-card-info">
+          <div class="olio-product-card-info__title">Huile d'olive vierge extra</div>
+          <div class="olio-product-card-info__subtitle">CHÂTEAU D'ESTOUBLON | 50 cl</div>
+          <div class="olio-product-card-info__price">from 99,80 €</div>
+        </div>
+      </a>
+      <a href="/" class="olio-product-card">
+        <div class="olio-product-card-pic-wrapper">
+          <img src="{{ 'pic1.png' | asset_url }}" alt="" class="olio-product-card-pic1">
+          <img src="{{ 'pic2.png' | asset_url }}" alt="" class="olio-product-card-pic2">
+        </div>
+        <div class="olio-product-card-info">
+          <div class="olio-product-card-info__title">Huile d'olive vierge extra</div>
+          <div class="olio-product-card-info__subtitle">CHÂTEAU D'ESTOUBLON | 50 cl</div>
+          <div class="olio-product-card-info__price">from 99,80 €</div>
+        </div>
+      </a>
+      <a href="/" class="olio-product-card">
+        <div class="olio-product-card-pic-wrapper">
+          <img src="{{ 'pic1.png' | asset_url }}" alt="" class="olio-product-card-pic1">
+          <img src="{{ 'pic2.png' | asset_url }}" alt="" class="olio-product-card-pic2">
+        </div>
+        <div class="olio-product-card-info">
+          <div class="olio-product-card-info__title">Huile d'olive vierge extra</div>
+          <div class="olio-product-card-info__subtitle">CHÂTEAU D'ESTOUBLON | 50 cl</div>
+          <div class="olio-product-card-info__price">from 99,80 €</div>
+        </div>
+      </a>
+      <a href="/" class="olio-product-card">
+        <div class="olio-product-card-pic-wrapper">
+          <img src="{{ 'pic1.png' | asset_url }}" alt="" class="olio-product-card-pic1">
+          <img src="{{ 'pic2.png' | asset_url }}" alt="" class="olio-product-card-pic2">
+        </div>
+        <div class="olio-product-card-info">
+          <div class="olio-product-card-info__title">Huile d'olive vierge extra</div>
+          <div class="olio-product-card-info__subtitle">CHÂTEAU D'ESTOUBLON | 50 cl</div>
+          <div class="olio-product-card-info__price">from 99,80 €</div>
+        </div>
+      </a>
+      <a href="/" class="olio-product-card">
+        <div class="olio-product-card-pic-wrapper">
+          <img src="{{ 'pic1.png' | asset_url }}" alt="" class="olio-product-card-pic1">
+          <img src="{{ 'pic2.png' | asset_url }}" alt="" class="olio-product-card-pic2">
+        </div>
+        <div class="olio-product-card-info">
+          <div class="olio-product-card-info__title">Huile d'olive vierge extra</div>
+          <div class="olio-product-card-info__subtitle">CHÂTEAU D'ESTOUBLON | 50 cl</div>
+          <div class="olio-product-card-info__price">from 99,80 €</div>
+        </div>
+      </a>
+      <a href="/" class="olio-product-card">
+        <div class="olio-product-card-pic-wrapper">
+          <img src="{{ 'pic1.png' | asset_url }}" alt="" class="olio-product-card-pic1">
+          <img src="{{ 'pic2.png' | asset_url }}" alt="" class="olio-product-card-pic2">
+        </div>
+        <div class="olio-product-card-info">
+          <div class="olio-product-card-info__title">Huile d'olive vierge extra</div>
+          <div class="olio-product-card-info__subtitle">CHÂTEAU D'ESTOUBLON | 50 cl</div>
+          <div class="olio-product-card-info__price">from 99,80 €</div>
+        </div>
+      </a>
+      <a href="/" class="olio-product-card">
+        <div class="olio-product-card-pic-wrapper">
+          <img src="{{ 'pic1.png' | asset_url }}" alt="" class="olio-product-card-pic1">
+          <img src="{{ 'pic2.png' | asset_url }}" alt="" class="olio-product-card-pic2">
+        </div>
+        <div class="olio-product-card-info">
+          <div class="olio-product-card-info__title">Huile d'olive vierge extra</div>
+          <div class="olio-product-card-info__subtitle">CHÂTEAU D'ESTOUBLON | 50 cl</div>
+          <div class="olio-product-card-info__price">from 99,80 €</div>
+        </div>
+      </a>
+      <a href="/" class="olio-product-card">
+        <div class="olio-product-card-pic-wrapper">
+          <img src="{{ 'pic1.png' | asset_url }}" alt="" class="olio-product-card-pic1">
+          <img src="{{ 'pic2.png' | asset_url }}" alt="" class="olio-product-card-pic2">
+        </div>
+        <div class="olio-product-card-info">
+          <div class="olio-product-card-info__title">Huile d'olive vierge extra</div>
+          <div class="olio-product-card-info__subtitle">CHÂTEAU D'ESTOUBLON | 50 cl</div>
+          <div class="olio-product-card-info__price">from 99,80 €</div>
+        </div>
+      </a>
+      <a href="/" class="olio-product-card">
+        <div class="olio-product-card-pic-wrapper">
+          <img src="{{ 'pic1.png' | asset_url }}" alt="" class="olio-product-card-pic1">
+          <img src="{{ 'pic2.png' | asset_url }}" alt="" class="olio-product-card-pic2">
+        </div>
+        <div class="olio-product-card-info">
+          <div class="olio-product-card-info__title">Huile d'olive vierge extra</div>
+          <div class="olio-product-card-info__subtitle">CHÂTEAU D'ESTOUBLON | 50 cl</div>
+          <div class="olio-product-card-info__price">from 99,80 €</div>
+        </div>
+      </a>
+      <a href="/" class="olio-product-card">
+        <div class="olio-product-card-pic-wrapper">
+          <img src="{{ 'pic1.png' | asset_url }}" alt="" class="olio-product-card-pic1">
+          <img src="{{ 'pic2.png' | asset_url }}" alt="" class="olio-product-card-pic2">
+        </div>
+        <div class="olio-product-card-info">
+          <div class="olio-product-card-info__title">Huile d'olive vierge extra</div>
+          <div class="olio-product-card-info__subtitle">CHÂTEAU D'ESTOUBLON | 50 cl</div>
+          <div class="olio-product-card-info__price">from 99,80 €</div>
+        </div>
+      </a>
+      <a href="/" class="olio-product-card">
+        <div class="olio-product-card-pic-wrapper">
+          <img src="{{ 'pic1.png' | asset_url }}" alt="" class="olio-product-card-pic1">
+          <img src="{{ 'pic2.png' | asset_url }}" alt="" class="olio-product-card-pic2">
+        </div>
+        <div class="olio-product-card-info">
+          <div class="olio-product-card-info__title">Huile d'olive vierge extra</div>
+          <div class="olio-product-card-info__subtitle">CHÂTEAU D'ESTOUBLON | 50 cl</div>
+          <div class="olio-product-card-info__price">from 99,80 €</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
 
 {% schema %}
 {
