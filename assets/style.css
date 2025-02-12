@@ -676,6 +676,7 @@ olio-catalog-filters-tags::-webkit-scrollbar {
   }
 }
 .olio-product-card {
+  display: block;
   width: 100%;
   border: 1px solid rgba(110, 115, 92, 0.25);
 }
@@ -700,6 +701,10 @@ olio-catalog-filters-tags::-webkit-scrollbar {
   object-fit: cover;
   transition: opacity 0.5s;
 }
+.olio-product-card-pic1 img {
+  width: 100%;
+  height: 100%;
+}
 .olio-product-card-pic2 {
   position: absolute;
   top: 0;
@@ -709,6 +714,10 @@ olio-catalog-filters-tags::-webkit-scrollbar {
   object-fit: cover;
   opacity: 0;
   transition: opacity 0.5s;
+}
+.olio-product-card-pic2 img {
+  width: 100%;
+  height: 100%;
 }
 .olio-product-card-pic-wrapper:hover .olio-product-card-pic1 {
   opacity: 0;

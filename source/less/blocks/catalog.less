@@ -236,6 +236,7 @@ olio-catalog-filters-tags::-webkit-scrollbar {
 }
 
 .olio-product-card {
+  display: block;
   width: 100%;
   border: 1px solid rgba(110, 115, 92, 0.25);
 
@@ -264,6 +265,11 @@ olio-catalog-filters-tags::-webkit-scrollbar {
   height: 100%;
   object-fit: cover;
   transition: opacity .5s;
+
+  & img {
+    width: 100%;
+    height: 100%;
+  }
 }
 
 .olio-product-card-pic2 {
@@ -275,6 +281,11 @@ olio-catalog-filters-tags::-webkit-scrollbar {
   object-fit: cover;
   opacity: 0;
   transition: opacity .5s;
+
+  & img {
+    width: 100%;
+    height: 100%;
+  }
 }
 
 .olio-product-card-pic-wrapper:hover {
