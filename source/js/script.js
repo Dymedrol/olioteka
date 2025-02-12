@@ -1,7 +1,9 @@
-// import { initWishList } from './wishlist';
+import { initCollectionPage } from './collection-page';
 
 $(document).ready(function(){
-  // initWishList();
+  initCollectionPage();
+
+
   const burger = $('#burger');
   const mobileMenu = $('#mobile-menu');
   const mobileMenuClose = mobileMenu.find('.olio-header-menu-mobile__close');

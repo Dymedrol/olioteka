@@ -94,7 +94,7 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _source_less_index_less__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./source/less/index.less */ \"./source/less/index.less\");\n/* harmony import */ var _source_less_index_less__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_source_less_index_less__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _source_js_script_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./source/js/script.js */ \"./source/js/script.js\");\n/* harmony import */ var _source_js_script_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_source_js_script_js__WEBPACK_IMPORTED_MODULE_1__);\n\n\n\n//# sourceURL=webpack:///./index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _source_less_index_less__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./source/less/index.less */ \"./source/less/index.less\");\n/* harmony import */ var _source_less_index_less__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_source_less_index_less__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _source_js_script_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./source/js/script.js */ \"./source/js/script.js\");\n\n\n\n//# sourceURL=webpack:///./index.js?");
 
 /***/ }),
 
@@ -121,14 +121,27 @@ eval("\n\nvar stylesInDom = {};\n\nvar isOldIE = function isOldIE() {\n  var mem
 
 /***/ }),
 
+/***/ "./source/js/collection-page.js":
+/*!**************************************!*\
+  !*** ./source/js/collection-page.js ***!
+  \**************************************/
+/*! exports provided: initCollectionPage */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"initCollectionPage\", function() { return initCollectionPage; });\nconst initCollectionPage = () => {\n  let filtersForm = $('#catalog-filter');\n\n  if (!filtersForm.length) {\n    return;\n  }\n\n  const mainContainer = $('#MainContent');\n\n  function renderCatalog(data) {\n    const catalogId = $('#section-id').val();\n    const catalogContainer = $('#shopify-section-' + catalogId);\n    catalogContainer.empty();\n    catalogContainer.html(data);\n    setHandler();\n    mainContainer.removeClass('loading');\n  }\n\n  function getProducts(url) {\n    mainContainer.addClass('loading');\n    fetch(url).then(response => {\n      if (!response.ok) {\n        throw new Error('Network response was not ok ' + response.statusText);\n      }\n\n      return response.text();\n    }).then(data => {\n      renderCatalog(data);\n    }).catch(error => {\n      console.error('There was a problem with the fetch operation:', error);\n    });\n  }\n\n  function setHandler() {\n    let filtersForm = $('#catalog-filter');\n    filtersForm.find('input').on('change', function () {\n      const collectionHandle = filtersForm.find('#collection-handle').val();\n      const sectionId = filtersForm.find('#section-id').val();\n      let selectedTag = filtersForm.find(\"input[name='tag']:checked\").val();\n      const selectedSorting = 'title-ascending';\n      let filter = selectedTag == 'all' ? '' : '&filter.p.tag=' + selectedTag.replace(/ /g, '+');\n      const url = `/collections/${collectionHandle}?section_id=${sectionId}${filter}&sort_by=${selectedSorting}`;\n      getProducts(url);\n    });\n  }\n\n  setHandler();\n};\n\n//# sourceURL=webpack:///./source/js/collection-page.js?");
+
+/***/ }),
+
 /***/ "./source/js/script.js":
 /*!*****************************!*\
   !*** ./source/js/script.js ***!
   \*****************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-eval("// import { initWishList } from './wishlist';\n$(document).ready(function () {\n  // initWishList();\n  const burger = $('#burger');\n  const mobileMenu = $('#mobile-menu');\n  const mobileMenuClose = mobileMenu.find('.olio-header-menu-mobile__close');\n  burger.click(function () {\n    console.log('!!!!', mobileMenu.length);\n    mobileMenu.show(\"fast\");\n  });\n  mobileMenuClose.click(function () {\n    mobileMenu.hide('fast');\n  });\n});\n\n//# sourceURL=webpack:///./source/js/script.js?");
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _collection_page__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./collection-page */ \"./source/js/collection-page.js\");\n\n$(document).ready(function () {\n  Object(_collection_page__WEBPACK_IMPORTED_MODULE_0__[\"initCollectionPage\"])();\n  const burger = $('#burger');\n  const mobileMenu = $('#mobile-menu');\n  const mobileMenuClose = mobileMenu.find('.olio-header-menu-mobile__close');\n  burger.click(function () {\n    console.log('!!!!', mobileMenu.length);\n    mobileMenu.show(\"fast\");\n  });\n  mobileMenuClose.click(function () {\n    mobileMenu.hide('fast');\n  });\n});\n\n//# sourceURL=webpack:///./source/js/script.js?");
 
 /***/ }),
 

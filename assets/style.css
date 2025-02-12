@@ -308,6 +308,10 @@ body {
 .cursor-pointer {
   cursor: pointer;
 }
+.loading {
+  opacity: 0.2;
+  pointer-events: none;
+}
 @font-face {
   font-family: "TT Ricordi Allegria Trl";
   src: url('./TT_Ricordi_Allegria_Trial_Regular.ttf') format('truetype');
@@ -624,8 +628,22 @@ olio-catalog-filters-tags::-webkit-scrollbar {
   scrollbar-width: none;
   /* Firefox */
 }
+.olio-catalog-filters-tags-fieldset {
+  display: flex;
+  gap: 10px;
+}
 .olio-catalog-filters-tags__item {
+  position: relative;
   flex-shrink: 0;
+}
+.olio-catalog-filters-tags__item input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+.olio-catalog-filters-tags__item span {
+  display: block;
   padding: 8px 16px;
   border-radius: 30px;
   border-width: 1px;
@@ -635,8 +653,13 @@ olio-catalog-filters-tags::-webkit-scrollbar {
   font-size: 14px;
   line-height: 19.6px;
   letter-spacing: 0.5px;
+  color: rgba(33, 42, 23, 0.5);
 }
-.olio-catalog-filters-tags__item_active {
+.olio-catalog-filters-tags__item input:checked ~ span {
+  border-color: #212a17;
+  color: #212a17;
+}
+.olio-catalog-filters-tags__item_active span {
   border-color: #212a17;
   color: #212a17;
 }

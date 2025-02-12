@@ -181,23 +181,50 @@ olio-catalog-filters-tags::-webkit-scrollbar {
   scrollbar-width: none;  /* Firefox */
 }
 
-.olio-catalog-filters-tags__item {
-  flex-shrink: 0;
-  padding: 8px 16px;
-  border-radius: 30px;
-  border-width: 1px;
-  border: 1px solid rgba(110, 115, 92, 0.25);
+.olio-catalog-filters-tags-fieldset {
+  display: flex;
+  gap: 10px;
+}
 
-  font-family: Raleway;
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 19.6px;
-  letter-spacing: 0.5px;
+.olio-catalog-filters-tags__item {
+  position: relative;
+  flex-shrink: 0;
+
+  & input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+  }
+
+  & span {
+    display: block;
+    padding: 8px 16px;
+    border-radius: 30px;
+    border-width: 1px;
+    border: 1px solid rgba(110, 115, 92, 0.25);
+
+    font-family: Raleway;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 19.6px;
+    letter-spacing: 0.5px;
+    color: rgba(33, 42, 23, 0.50);
+  }
+}
+
+.olio-catalog-filters-tags__item input:checked {
+  ~ span {
+    border-color: #212a17;
+    color: #212a17;
+  }
 }
 
 .olio-catalog-filters-tags__item_active {
-  border-color: #212a17;
-  color: #212a17;
+  & span {
+    border-color: #212a17;
+    color: #212a17;
+  }
 }
 
 .olio-catalog-filters-sorting {

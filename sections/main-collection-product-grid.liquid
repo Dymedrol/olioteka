@@ -51,178 +51,44 @@
       <div class="olio-catalog-info__title">{{ collection.title }}</div>
       <div class="olio-catalog-info__text">{{ collection.description }}</div>
     </div>
-      {% comment %}
-    <div class="olio-catalog-filters">
-      <div class="olio-catalog-filters-tags">
-        <div class="olio-catalog-filters-tags__item olio-catalog-filters-tags__item_active">All</div>
-        <div class="olio-catalog-filters-tags__item">For Salads</div>
-        <div class="olio-catalog-filters-tags__item">For Frying</div>
-        <div class="olio-catalog-filters-tags__item">For Everything</div>
-      </div>
-      <div class="olio-catalog-filters-sorting">Sort: A-Z
-        <svg width="8" height="10" viewBox="0 0 8 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path id="Arrow 1" d="M4.5 0.5C4.5 0.223858 4.27614 1.20706e-08 4 0C3.72386 -1.20706e-08 3.5 0.223858 3.5 0.5L4.5 0.5ZM3.64645 9.85355C3.84171 10.0488 4.15829 10.0488 4.35355 9.85355L7.53553 6.67157C7.7308 6.47631 7.7308 6.15973 7.53553 5.96447C7.34027 5.7692 7.02369 5.7692 6.82843 5.96447L4 8.79289L1.17157 5.96447C0.97631 5.7692 0.659728 5.7692 0.464466 5.96447C0.269204 6.15973 0.269204 6.47631 0.464466 6.67157L3.64645 9.85355ZM3.5 0.5L3.5 9.5L4.5 9.5L4.5 0.5L3.5 0.5Z" fill="#212A17"/>
-        </svg>
-      </div>
-    </div>
-    <div class="olio-catalog-grid">
-      <a href="/products/test-product" class="olio-product-card">
-        <div class="olio-product-card-pic-wrapper">
-          <img src="{{ 'pic1.png' | asset_url }}" alt="" class="olio-product-card-pic1">
-          <img src="{{ 'pic2.png' | asset_url }}" alt="" class="olio-product-card-pic2">
+
+    <form class="olio-catalog-filters" id='catalog-filter'>
+        <div class="olio-catalog-filters-tags">
+          <input type='hidden' id='collection-handle' value="{{ collection.handle }}">
+          <input type='hidden' id='section-id' value='{{ section.id }}'>
+
+          {% for filter in collection.filters %}
+            {% if filter.label == 'Tags' %}
+              <fieldset class='olio-catalog-filters-tags-fieldset' id='tag'>
+                <label class='olio-catalog-filters-tags__item'>
+                  <input type="radio" name="tag" value="all" {% if filter.active_values.size == 0%}checked{% endif %}/>
+                  <span>All</span>
+                </label>
+                {% for value in filter.values %}
+                  <label class='olio-catalog-filters-tags__item'>
+                    <input data-param-name="{{ value.param_name }}" type="radio" id="" name="tag" value="{{ value.label | escape }}" {% if value.active %}checked{% endif %} />
+                    <span>{{ value.label | escape }}</span>
+                  </label>
+                {%  endfor %}
+              </fieldset>
+            {% endif %}
+
+          {% endfor %}
+
         </div>
-        <div class="olio-product-card-info">
-          <div class="olio-product-card-info__title">Huile d'olive vierge extra</div>
-          <div class="olio-product-card-info__subtitle">CHÂTEAU D'ESTOUBLON | 50 cl</div>
-          <div class="olio-product-card-info__price">from 99,80 €</div>
+        <div class="olio-catalog-filters-sorting">Sort: A-Z
+          <svg width="8" height="10" viewBox="0 0 8 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path id="Arrow 1" d="M4.5 0.5C4.5 0.223858 4.27614 1.20706e-08 4 0C3.72386 -1.20706e-08 3.5 0.223858 3.5 0.5L4.5 0.5ZM3.64645 9.85355C3.84171 10.0488 4.15829 10.0488 4.35355 9.85355L7.53553 6.67157C7.7308 6.47631 7.7308 6.15973 7.53553 5.96447C7.34027 5.7692 7.02369 5.7692 6.82843 5.96447L4 8.79289L1.17157 5.96447C0.97631 5.7692 0.659728 5.7692 0.464466 5.96447C0.269204 6.15973 0.269204 6.47631 0.464466 6.67157L3.64645 9.85355ZM3.5 0.5L3.5 9.5L4.5 9.5L4.5 0.5L3.5 0.5Z" fill="#212A17"/>
+          </svg>
         </div>
-      </a>
-      <a href="/products/test-product" class="olio-product-card">
-        <div class="olio-product-card-pic-wrapper">
-          <img src="{{ 'pic1.png' | asset_url }}" alt="" class="olio-product-card-pic1">
-          <img src="{{ 'pic2.png' | asset_url }}" alt="" class="olio-product-card-pic2">
-        </div>
-        <div class="olio-product-card-info">
-          <div class="olio-product-card-info__title">Huile d'olive vierge extra</div>
-          <div class="olio-product-card-info__subtitle">CHÂTEAU D'ESTOUBLON | 50 cl</div>
-          <div class="olio-product-card-info__price">from 99,80 €</div>
-        </div>
-      </a>
-      <a href="/products/test-product" class="olio-product-card">
-        <div class="olio-product-card-pic-wrapper">
-          <img src="{{ 'pic1.png' | asset_url }}" alt="" class="olio-product-card-pic1">
-          <img src="{{ 'pic2.png' | asset_url }}" alt="" class="olio-product-card-pic2">
-        </div>
-        <div class="olio-product-card-info">
-          <div class="olio-product-card-info__title">Huile d'olive vierge extra</div>
-          <div class="olio-product-card-info__subtitle">CHÂTEAU D'ESTOUBLON | 50 cl</div>
-          <div class="olio-product-card-info__price">from 99,80 €</div>
-        </div>
-      </a>
-      <a href="/products/test-product" class="olio-product-card">
-        <div class="olio-product-card-pic-wrapper">
-          <img src="{{ 'pic1.png' | asset_url }}" alt="" class="olio-product-card-pic1">
-          <img src="{{ 'pic2.png' | asset_url }}" alt="" class="olio-product-card-pic2">
-        </div>
-        <div class="olio-product-card-info">
-          <div class="olio-product-card-info__title">Huile d'olive vierge extra</div>
-          <div class="olio-product-card-info__subtitle">CHÂTEAU D'ESTOUBLON | 50 cl</div>
-          <div class="olio-product-card-info__price">from 99,80 €</div>
-        </div>
-      </a>
-      <a href="/products/test-product" class="olio-product-card">
-        <div class="olio-product-card-pic-wrapper">
-          <img src="{{ 'pic1.png' | asset_url }}" alt="" class="olio-product-card-pic1">
-          <img src="{{ 'pic2.png' | asset_url }}" alt="" class="olio-product-card-pic2">
-        </div>
-        <div class="olio-product-card-info">
-          <div class="olio-product-card-info__title">Huile d'olive vierge extra</div>
-          <div class="olio-product-card-info__subtitle">CHÂTEAU D'ESTOUBLON | 50 cl</div>
-          <div class="olio-product-card-info__price">from 99,80 €</div>
-        </div>
-      </a>
-      <a href="/products/test-product" class="olio-product-card">
-        <div class="olio-product-card-pic-wrapper">
-          <img src="{{ 'pic1.png' | asset_url }}" alt="" class="olio-product-card-pic1">
-          <img src="{{ 'pic2.png' | asset_url }}" alt="" class="olio-product-card-pic2">
-        </div>
-        <div class="olio-product-card-info">
-          <div class="olio-product-card-info__title">Huile d'olive vierge extra</div>
-          <div class="olio-product-card-info__subtitle">CHÂTEAU D'ESTOUBLON | 50 cl</div>
-          <div class="olio-product-card-info__price">from 99,80 €</div>
-        </div>
-      </a>
-      <a href="/products/test-product" class="olio-product-card">
-        <div class="olio-product-card-pic-wrapper">
-          <img src="{{ 'pic1.png' | asset_url }}" alt="" class="olio-product-card-pic1">
-          <img src="{{ 'pic2.png' | asset_url }}" alt="" class="olio-product-card-pic2">
-        </div>
-        <div class="olio-product-card-info">
-          <div class="olio-product-card-info__title">Huile d'olive vierge extra</div>
-          <div class="olio-product-card-info__subtitle">CHÂTEAU D'ESTOUBLON | 50 cl</div>
-          <div class="olio-product-card-info__price">from 99,80 €</div>
-        </div>
-      </a>
-      <a href="/products/test-product" class="olio-product-card">
-        <div class="olio-product-card-pic-wrapper">
-          <img src="{{ 'pic1.png' | asset_url }}" alt="" class="olio-product-card-pic1">
-          <img src="{{ 'pic2.png' | asset_url }}" alt="" class="olio-product-card-pic2">
-        </div>
-        <div class="olio-product-card-info">
-          <div class="olio-product-card-info__title">Huile d'olive vierge extra</div>
-          <div class="olio-product-card-info__subtitle">CHÂTEAU D'ESTOUBLON | 50 cl</div>
-          <div class="olio-product-card-info__price">from 99,80 €</div>
-        </div>
-      </a>
-      <a href="/products/test-product" class="olio-product-card">
-        <div class="olio-product-card-pic-wrapper">
-          <img src="{{ 'pic1.png' | asset_url }}" alt="" class="olio-product-card-pic1">
-          <img src="{{ 'pic2.png' | asset_url }}" alt="" class="olio-product-card-pic2">
-        </div>
-        <div class="olio-product-card-info">
-          <div class="olio-product-card-info__title">Huile d'olive vierge extra</div>
-          <div class="olio-product-card-info__subtitle">CHÂTEAU D'ESTOUBLON | 50 cl</div>
-          <div class="olio-product-card-info__price">from 99,80 €</div>
-        </div>
-      </a>
-      <a href="/products/test-product" class="olio-product-card">
-        <div class="olio-product-card-pic-wrapper">
-          <img src="{{ 'pic1.png' | asset_url }}" alt="" class="olio-product-card-pic1">
-          <img src="{{ 'pic2.png' | asset_url }}" alt="" class="olio-product-card-pic2">
-        </div>
-        <div class="olio-product-card-info">
-          <div class="olio-product-card-info__title">Huile d'olive vierge extra</div>
-          <div class="olio-product-card-info__subtitle">CHÂTEAU D'ESTOUBLON | 50 cl</div>
-          <div class="olio-product-card-info__price">from 99,80 €</div>
-        </div>
-      </a>
-      <a href="/products/test-product" class="olio-product-card">
-        <div class="olio-product-card-pic-wrapper">
-          <img src="{{ 'pic1.png' | asset_url }}" alt="" class="olio-product-card-pic1">
-          <img src="{{ 'pic2.png' | asset_url }}" alt="" class="olio-product-card-pic2">
-        </div>
-        <div class="olio-product-card-info">
-          <div class="olio-product-card-info__title">Huile d'olive vierge extra</div>
-          <div class="olio-product-card-info__subtitle">CHÂTEAU D'ESTOUBLON | 50 cl</div>
-          <div class="olio-product-card-info__price">from 99,80 €</div>
-        </div>
-      </a>
-      <a href="/products/test-product" class="olio-product-card">
-        <div class="olio-product-card-pic-wrapper">
-          <img src="{{ 'pic1.png' | asset_url }}" alt="" class="olio-product-card-pic1">
-          <img src="{{ 'pic2.png' | asset_url }}" alt="" class="olio-product-card-pic2">
-        </div>
-        <div class="olio-product-card-info">
-          <div class="olio-product-card-info__title">Huile d'olive vierge extra</div>
-          <div class="olio-product-card-info__subtitle">CHÂTEAU D'ESTOUBLON | 50 cl</div>
-          <div class="olio-product-card-info__price">from 99,80 €</div>
-        </div>
-      </a>
-    </div>
-    {% endcomment %}
+    </form>
+
     <div class="">
           {%- paginate collection.products by section.settings.products_per_page -%}
               {% comment %} Sort is the first tabbable element when filter type is vertical {% endcomment %}
 
               <div class="{% if section.settings.filter_type == 'vertical' %} facets-vertical page-width{% endif %}">
-                  {{ 'component-facets.css' | asset_url | stylesheet_tag }}
-                  <script src="{{ 'facets.js' | asset_url }}" defer="defer"></script>
-                  {%- if section.settings.enable_filtering or section.settings.enable_sorting -%}
-                      <aside
-                              aria-labelledby="verticalTitle"
-                              class="facets-wrapper{% unless section.settings.enable_filtering %} facets-wrapper--no-filters{% endunless %}{% if section.settings.filter_type != 'vertical' %}{% endif %}"
-                              id="main-collection-filters"
-                              data-id="{{ section.id }}"
-                      >
-                          {% render 'facets',
-                                  results: collection,
-                                  enable_filtering: section.settings.enable_filtering,
-                                  enable_sorting: section.settings.enable_sorting,
-                                  filter_type: section.settings.filter_type,
-                                  paginate: paginate
-                          %}
-                      </aside>
-                  {%- endif -%}
+
 
                   <div
                           class="product-grid-container{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
