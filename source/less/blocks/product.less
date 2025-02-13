@@ -127,6 +127,35 @@
   }
 }
 
+.olio-product-info__variants {
+  & label {
+    margin: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    height: 36px !important;
+    border-width: 1px !important;
+    border-radius: 30px !important;
+    padding-right: 16px !important;
+    padding-left: 16px !important;
+    border: 1px solid rgba(100, 101, 86, 1) !important;
+
+    font-family: Raleway !important;
+    font-weight: 600 !important;
+    font-size: 14px !important;
+    line-height: 19.6px !important;
+    letter-spacing: 0.5px !important;
+    opacity: .4 !important;
+  }
+
+  & input:checked {
+    & +label {
+      opacity: 1 !important;
+      background-color: transparent !important;
+      color: rgba(100, 101, 86, 1) !important;
+    }
+  }
+}
+
 .olio-product-info__variants-price {
   font-family: Raleway;
   font-weight: 600;
@@ -139,6 +168,7 @@
 .olio-product-info__variants-choice {
   display: flex;
   gap: 10px;
+  margin: 0 !important;
 }
 
 .olio-product-info__variants-choice-item {
@@ -183,6 +213,33 @@
   }
 }
 
+.product-form__submit {
+  width: 100% !important;
+  padding: 15px!important;
+  border: 1px solid rgba(100, 101, 86, 1) !important;
+  background-color: transparent !important;
+  margin-bottom: 40px !important;
+  min-height: unset !important;
+
+  @media (@XL) {
+    width: 340px !important;
+  }
+
+  & span {
+    font-family: Raleway !important;
+    font-weight: 600 !important;
+    font-size: 14px !important;
+    line-height: 19.6px !important;
+    letter-spacing: 0.5px !important;
+    text-align: center !important;
+    color: rgba(100, 101, 86, 1) !important;
+  }
+
+  &:after {
+    display: none;
+  }
+}
+
 .olio-product-info__description {
   font-family: Raleway;
   font-weight: 400;
@@ -192,4 +249,12 @@
   text-decoration-style: solid;
   text-decoration-offset: Auto;
   text-decoration-thickness: Auto;
+
+  & ul {
+    text-decoration-style: solid;
+    text-decoration-offset: Auto;
+    text-decoration-thickness: Auto;
+    list-style-type: disc;
+    padding-left: 20px;
+  }
 }

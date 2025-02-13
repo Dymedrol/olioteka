@@ -906,6 +906,28 @@ olio-catalog-filters-tags::-webkit-scrollbar {
     width: 340px;
   }
 }
+.olio-product-info__variants label {
+  margin: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  height: 36px !important;
+  border-width: 1px !important;
+  border-radius: 30px !important;
+  padding-right: 16px !important;
+  padding-left: 16px !important;
+  border: 1px solid #646556 !important;
+  font-family: Raleway !important;
+  font-weight: 600 !important;
+  font-size: 14px !important;
+  line-height: 19.6px !important;
+  letter-spacing: 0.5px !important;
+  opacity: 0.4 !important;
+}
+.olio-product-info__variants input:checked + label {
+  opacity: 1 !important;
+  background-color: transparent !important;
+  color: #646556 !important;
+}
 .olio-product-info__variants-price {
   font-family: Raleway;
   font-weight: 600;
@@ -917,6 +939,7 @@ olio-catalog-filters-tags::-webkit-scrollbar {
 .olio-product-info__variants-choice {
   display: flex;
   gap: 10px;
+  margin: 0 !important;
 }
 .olio-product-info__variants-choice-item {
   display: flex;
@@ -955,6 +978,31 @@ olio-catalog-filters-tags::-webkit-scrollbar {
     width: 340px;
   }
 }
+.product-form__submit {
+  width: 100% !important;
+  padding: 15px!important;
+  border: 1px solid #646556 !important;
+  background-color: transparent !important;
+  margin-bottom: 40px !important;
+  min-height: unset !important;
+}
+@media ((min-width: 1280px)) {
+  .product-form__submit {
+    width: 340px !important;
+  }
+}
+.product-form__submit span {
+  font-family: Raleway !important;
+  font-weight: 600 !important;
+  font-size: 14px !important;
+  line-height: 19.6px !important;
+  letter-spacing: 0.5px !important;
+  text-align: center !important;
+  color: #646556 !important;
+}
+.product-form__submit:after {
+  display: none;
+}
 .olio-product-info__description {
   font-family: Raleway;
   font-weight: 400;
@@ -964,5 +1012,12 @@ olio-catalog-filters-tags::-webkit-scrollbar {
   text-decoration-style: solid;
   text-decoration-offset: Auto;
   text-decoration-thickness: Auto;
+}
+.olio-product-info__description ul {
+  text-decoration-style: solid;
+  text-decoration-offset: Auto;
+  text-decoration-thickness: Auto;
+  list-style-type: disc;
+  padding-left: 20px;
 }
 
