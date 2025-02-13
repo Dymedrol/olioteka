@@ -828,6 +828,10 @@ olio-catalog-filters-tags::-webkit-scrollbar {
     justify-content: space-between;
   }
 }
+.olio-product-gallery {
+  max-width: 100%;
+  width: 100%;
+}
 @media ((min-width: 960px)) {
   .olio-product-gallery {
     width: 415px;
