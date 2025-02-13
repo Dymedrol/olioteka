@@ -669,12 +669,17 @@ olio-catalog-filters-tags::-webkit-scrollbar {
 @media ((min-width: 960px)) {
   .olio-catalog-filters-sorting {
     display: block;
+    width: fit-content;
     font-family: Raleway;
     font-weight: 600;
     font-size: 14px;
     line-height: 19.6px;
     letter-spacing: 0.5px;
     color: #212a17;
+    margin: 0;
+    padding: 0;
+    height: 38px;
+    padding: 10px;
   }
 }
 .olio-catalog-grid {

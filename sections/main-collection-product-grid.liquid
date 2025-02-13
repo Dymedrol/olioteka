@@ -76,11 +76,22 @@
           {% endfor %}
 
         </div>
+      {% comment %}
         <div class="olio-catalog-filters-sorting">Sort: A-Z
           <svg width="8" height="10" viewBox="0 0 8 10" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path id="Arrow 1" d="M4.5 0.5C4.5 0.223858 4.27614 1.20706e-08 4 0C3.72386 -1.20706e-08 3.5 0.223858 3.5 0.5L4.5 0.5ZM3.64645 9.85355C3.84171 10.0488 4.15829 10.0488 4.35355 9.85355L7.53553 6.67157C7.7308 6.47631 7.7308 6.15973 7.53553 5.96447C7.34027 5.7692 7.02369 5.7692 6.82843 5.96447L4 8.79289L1.17157 5.96447C0.97631 5.7692 0.659728 5.7692 0.464466 5.96447C0.269204 6.15973 0.269204 6.47631 0.464466 6.67157L3.64645 9.85355ZM3.5 0.5L3.5 9.5L4.5 9.5L4.5 0.5L3.5 0.5Z" fill="#212A17"/>
           </svg>
         </div>
+        {% endcomment %}
+        <select name="sort_by" class="facet-filters__sort select__select caption-large olio-catalog-filters-sorting" id="SortBy" aria-describedby="a11y-refresh-page-message">
+          <option value="best-selling">Best selling</option>
+          <option value="title-ascending">Alphabetically, A-Z</option>
+          <option value="title-descending">Alphabetically, Z-A</option>
+          <option value="price-ascending">Price, low to high</option>
+          <option value="price-descending">Price, high to low</option>
+          <option value="created-ascending">Date, old to new</option>
+          <option value="created-descending">Date, new to old</option>
+        </select>
     </form>
 
     <div class="">
