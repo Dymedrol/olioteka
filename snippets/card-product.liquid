@@ -21,7 +21,7 @@
   {% render 'card-product', show_vendor: section.settings.show_vendor %}
 {% endcomment %}
 
-<a href="/" class="olio-product-card">
+<a href="{{ card_product.url }}" class="olio-product-card">
   <div class="olio-product-card-pic-wrapper">
     <picture class="olio-product-card-pic1">
       <source srcset="{{ card_product.featured_image | img_url: '360x420', crop: 'center' }} 1x, {{ card_product.featured_image | img_url: '720x840', crop: 'center' }} 2x"/>
