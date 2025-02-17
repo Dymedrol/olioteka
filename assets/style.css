@@ -795,6 +795,9 @@ olio-catalog-filters-tags::-webkit-scrollbar {
     padding-top: 40px;
   }
 }
+.olio-product .product__column-sticky {
+  position: static !important;
+}
 .olio-product-breadcrumb {
   display: none;
 }
