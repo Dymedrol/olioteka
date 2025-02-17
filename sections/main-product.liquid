@@ -110,41 +110,6 @@
                   </svg>
                   <span>{{ product.metafields.custom.region }}</span>
                 </div>
-                {%- when 'price' -%}
-                  <div id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
-                    {%- render 'price',
-                      product: product,
-                      use_variant: true,
-                      show_badges: true,
-                      price_class: 'price--large'
-                    -%}
-                  </div>
-                  {%- if product.quantity_price_breaks_configured? -%}
-                    <div class="volume-pricing-note" id="Volume-Note-{{ section.id }}">
-                      <span>{{ 'products.product.volume_pricing.note' | t }}</span>
-                    </div>
-                  {%- endif -%}
-                  {%- if cart.taxes_included or cart.duties_included or shop.shipping_policy.body != blank -%}
-                    <div class="product__tax caption rte">
-                      {%- if cart.duties_included and cart.taxes_included -%}
-                        {{ 'products.product.duties_and_taxes_included' | t }}
-                      {%- elsif cart.taxes_included -%}
-                        {{ 'products.product.taxes_included' | t }}
-                      {%- elsif cart.duties_included -%}
-                        {{ 'products.product.duties_included' | t }}
-                      {%- endif -%}
-                      {%- if shop.shipping_policy.body != blank -%}
-                        {{ 'products.product.shipping_policy_html' | t: link: shop.shipping_policy.url }}
-                      {%- endif -%}
-                    </div>
-                  {%- endif -%}
-                  <div {{ block.shopify_attributes }}>
-                    {%- assign product_form_installment_id = 'product-form-installment-' | append: section.id -%}
-                    {%- form 'product', product, id: product_form_installment_id, class: 'installment caption-large' -%}
-                      <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
-                      {{ form | payment_terms }}
-                    {%- endform -%}
-                  </div>
                 {%- when 'inventory' -%}
                   <p
                     class="product__inventory{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}{% if product.selected_or_first_available_variant.inventory_management != 'shopify' %} visibility-hidden{% endif %}"
@@ -196,12 +161,6 @@
                       {%- endif -%}
                     {%- endif -%}
                   </p>
-                {%- when 'description' -%}
-                  {%- if product.description != blank -%}
-                    <div class="olio-product-info__description" {{ block.shopify_attributes }}>
-                      {{ product.description }}
-                    </div>
-                  {%- endif -%}
                 {%- when 'sku' -%}
                   <p
                     class="product__sku{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}{% if product.selected_or_first_available_variant.sku.size == 0 %} visibility-hidden{% endif %}"
@@ -466,29 +425,6 @@
                     render 'share-button', block: block, share_link: share_url
                   %}
 
-                {%- when 'variant_picker' -%}
-                  <div class='olio-product-info__variants'>
-                      <div class="olio-product-info__variants-price">
-                          <div id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
-                              {%- render 'price',
-                                      product: product,
-                                      use_variant: true,
-                                      show_badges: true,
-                                      price_class: 'price--large'
-                              -%}
-                          </div>
-                      </div>
-                      {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
-                  </div>
-
-                {%- when 'buy_buttons' -%}
-                  {%- render 'buy-buttons',
-                    block: block,
-                    product: product,
-                    product_form_id: product_form_id,
-                    section_id: section.id,
-                    show_pickup_availability: true
-                  -%}
                 {%- when 'rating' -%}
                   {%- if product.metafields.reviews.rating.value != blank -%}
                     <div class="rating-wrapper">
@@ -680,6 +616,43 @@
                   {% render 'icon-with-text', block: block %}
               {%- endcase -%}
             {%- endfor -%}
+              <div class='olio-product-info__variants'>
+                  {%- for block in section.blocks -%}
+                      {%- case block.type -%}
+                          {%- when 'price' -%}
+                              <div class="olio-product-info__variants-price">
+                                  <div id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
+                                      {%- render 'price',
+                                              product: product,
+                                              use_variant: true,
+                                              show_badges: true,
+                                              price_class: 'price--large'
+                                      -%}
+                                  </div>
+                              </div>
+                          {%- when 'variant_picker' -%}
+                              {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
+                      {%- endcase -%}
+                  {%- endfor -%}
+              </div>
+              {%- for block in section.blocks -%}
+                  {%- case block.type -%}
+                      {%- when 'buy_buttons' -%}
+                          {%- render 'buy-buttons',
+                                  block: block,
+                                  product: product,
+                                  product_form_id: product_form_id,
+                                  section_id: section.id,
+                                  show_pickup_availability: true
+                          -%}
+                      {%- when 'description' -%}
+                          {%- if product.description != blank -%}
+                              <div class="olio-product-info__description" {{ block.shopify_attributes }}>
+                                  {{ product.description }}
+                              </div>
+                          {%- endif -%}
+                  {%- endcase -%}
+              {%- endfor -%}
             <a href="{{ product.url }}" class="link product__view-details animate-arrow">
               {{ 'products.product.view_full_details' | t }}
               {{- 'icon-arrow.svg' | inline_asset_content -}}
