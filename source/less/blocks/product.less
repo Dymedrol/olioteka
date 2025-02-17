@@ -49,7 +49,7 @@
 
   @media (@L) {
     width: 415px;
-    margin-bottom: 0;
+    margin: 0;
   }
 
   @media (@XL) {
@@ -90,6 +90,7 @@
 
   & .thumbnail-list {
     display: flex;
+    gap: 5px;
   }
 
    & .thumbnail-list__item {
@@ -106,9 +107,19 @@
     border-color: transparent;
   }
 
-  & :focus-visible] {
+  & :focus-visible {
     box-shadow: unset;
     border-color: transparent;
+  }
+
+  & .product-media-container {
+    @media (@L) {
+      width: 100% !important;
+    }
+  }
+
+  & .grid__item {
+    width: 100% !important;
   }
 }
 

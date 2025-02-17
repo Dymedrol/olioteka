@@ -837,7 +837,7 @@ olio-catalog-filters-tags::-webkit-scrollbar {
 @media ((min-width: 960px)) {
   .olio-product-gallery {
     width: 415px;
-    margin-bottom: 0;
+    margin: 0;
   }
 }
 @media ((min-width: 1280px)) {
@@ -872,6 +872,7 @@ olio-catalog-filters-tags::-webkit-scrollbar {
 }
 .olio-product-gallery .thumbnail-list {
   display: flex;
+  gap: 5px;
 }
 .olio-product-gallery .thumbnail-list__item {
   width: 50px !important;
@@ -884,9 +885,17 @@ olio-catalog-filters-tags::-webkit-scrollbar {
   box-shadow: unset;
   border-color: transparent;
 }
-.olio-product-gallery .thumbnail[aria-current] {
+.olio-product-gallery :focus-visible {
   box-shadow: unset;
   border-color: transparent;
+}
+@media ((min-width: 960px)) {
+  .olio-product-gallery .product-media-container {
+    width: 100% !important;
+  }
+}
+.olio-product-gallery .grid__item {
+  width: 100% !important;
 }
 @media ((min-width: 960px)) {
   .olio-product-info {
