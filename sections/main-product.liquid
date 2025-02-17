@@ -77,7 +77,8 @@
   <div class="olio-product">
     <div class='container'>
       <div class="olio-product-breadcrumb">
-        <a href="/" class="olio-product-breadcrumb-link">Shop</a> / <a href="/" class="olio-product-breadcrumb-link">Extra Virgin Olive Oils</a>
+        <a href="/collections/all" class="olio-product-breadcrumb-link">Shop</a>
+        {% comment %}<a href="/collections/all" class="olio-product-breadcrumb-link">Shop</a> / <a href="/" class="olio-product-breadcrumb-link">Extra Virgin Olive Oils</a>{% endcomment %}
       </div>
       <div class="product olio-product-content product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
         <div class="olio-product-gallery">

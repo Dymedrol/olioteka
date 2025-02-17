@@ -829,12 +829,15 @@ olio-catalog-filters-tags::-webkit-scrollbar {
   }
 }
 .olio-product-gallery {
-  max-width: 100%;
   width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  margin-bottom: 20px;
 }
 @media ((min-width: 960px)) {
   .olio-product-gallery {
     width: 415px;
+    margin-bottom: 0;
   }
 }
 @media ((min-width: 1280px)) {
@@ -866,6 +869,24 @@ olio-catalog-filters-tags::-webkit-scrollbar {
   height: 50px;
   object-fit: cover;
   cursor: pointer;
+}
+.olio-product-gallery .thumbnail-list {
+  display: flex;
+}
+.olio-product-gallery .thumbnail-list__item {
+  width: 50px !important;
+  height: 50px !important;
+}
+.olio-product-gallery .grid--peek.slider .grid__item:first-of-type {
+  margin-left: 0;
+}
+.olio-product-gallery .thumbnail[aria-current] {
+  box-shadow: unset;
+  border-color: transparent;
+}
+.olio-product-gallery .thumbnail[aria-current] {
+  box-shadow: unset;
+  border-color: transparent;
 }
 @media ((min-width: 960px)) {
   .olio-product-info {
