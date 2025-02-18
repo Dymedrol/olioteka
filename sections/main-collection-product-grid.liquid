@@ -64,8 +64,9 @@
                   <input type="radio" name="tag" value="all" {% if filter.active_values.size == 0%}checked{% endif %}/>
                   <span>All</span>
                 </label>
-                {% for value in filter.values %}
-                  <label class='olio-catalog-filters-tags__item'>
+                  {% assign sorted_values = filter.values | sort: 'label' %}
+                {% for value in sorted_values %}
+                  <label class='olio-catalog-filters-tags__item !!!' style="order: {{ value.id }};">
                     <input data-param-name="{{ value.param_name }}" type="radio" id="" name="tag" value="{{ value.label | escape }}" {% if value.active %}checked{% endif %} />
                     <span>{{ value.label | escape }}</span>
                   </label>
