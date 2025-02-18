@@ -1057,4 +1057,92 @@ olio-catalog-filters-tags::-webkit-scrollbar {
   list-style-type: disc;
   padding-left: 20px;
 }
+.olio-related {
+  background: #F4F4EC;
+  padding: 50px 0 100px;
+}
+.olio-related-title-wrapper {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  border-bottom: 1px solid rgba(110, 115, 92, 0.5);
+  margin-bottom: 30px;
+}
+.olio-related-title {
+  width: 330px;
+  margin: 0 auto;
+  font-family: TT Ricordi Allegria Trl;
+  font-weight: 400;
+  font-size: 34px;
+  line-height: 34px;
+  text-align: center;
+  text-transform: math-auto;
+  position: relative;
+  bottom: -1px;
+  background: #F4F4EC;
+}
+.olio-related-list {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+  justify-content: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+@media ((min-width: 960px)) {
+  .olio-related-list {
+    max-width: unset;
+  }
+}
+@media ((min-width: 960px)) {
+  .olio-related-list_item {
+    align-self: stretch;
+  }
+}
+@media ((min-width: 960px)) {
+  .olio-related-list_item .olio-product-card {
+    height: 100%;
+  }
+}
+@media ((min-width: 960px)) {
+  .olio-related-list_item:nth-child(3) {
+    display: none;
+  }
+}
+@media ((min-width: 1280px)) {
+  .olio-related-list_item:nth-child(3) {
+    display: block;
+  }
+}
+.olio-related-carousel {
+  opacity: 0;
+}
+@media ((min-width: 960px)) {
+  .olio-related-carousel {
+    opacity: 1;
+  }
+}
+.slick-initialized {
+  opacity: 1;
+}
+.olio-related-carousel .slick-dots {
+  display: flex;
+  gap: 10px;
+  margin: 30px auto 0;
+  width: fit-content;
+}
+.olio-related-carousel .slick-dots li {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 1px solid #646A5D;
+}
+.olio-related-carousel .slick-dots li button {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+.olio-related-carousel .slick-dots .slick-active {
+  background-color: #646A5D;
+}
 

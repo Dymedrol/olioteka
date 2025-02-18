@@ -133,6 +133,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 
 /***/ }),
 
+/***/ "./source/js/productPage.js":
+/*!**********************************!*\
+  !*** ./source/js/productPage.js ***!
+  \**********************************/
+/*! exports provided: initProductPage */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"initProductPage\", function() { return initProductPage; });\nconst initProductPage = () => {\n  setTimeout(function () {\n    $('.olio-related-carousel').slick({\n      slidesToShow: 1,\n      slidesToScroll: 1,\n      autoplay: false,\n      autoplaySpeed: 2000,\n      mobileFirst: true,\n      dots: true,\n      arrows: false,\n      responsive: [{\n        breakpoint: 959,\n        settings: \"unslick\"\n      }]\n    });\n  }, 3000);\n};\n\n//# sourceURL=webpack:///./source/js/productPage.js?");
+
+/***/ }),
+
 /***/ "./source/js/script.js":
 /*!*****************************!*\
   !*** ./source/js/script.js ***!
@@ -141,7 +153,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _collection_page__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./collection-page */ \"./source/js/collection-page.js\");\n\n$(document).ready(function () {\n  Object(_collection_page__WEBPACK_IMPORTED_MODULE_0__[\"initCollectionPage\"])();\n  const burger = $('#burger');\n  const mobileMenu = $('#mobile-menu');\n  const mobileMenuClose = mobileMenu.find('.olio-header-menu-mobile__close');\n  burger.click(function () {\n    console.log('!!!!', mobileMenu.length);\n    mobileMenu.show(\"fast\");\n  });\n  mobileMenuClose.click(function () {\n    mobileMenu.hide('fast');\n  });\n});\n\n//# sourceURL=webpack:///./source/js/script.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _collection_page__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./collection-page */ \"./source/js/collection-page.js\");\n/* harmony import */ var _productPage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./productPage */ \"./source/js/productPage.js\");\n\n\n$(document).ready(function () {\n  Object(_collection_page__WEBPACK_IMPORTED_MODULE_0__[\"initCollectionPage\"])();\n  Object(_productPage__WEBPACK_IMPORTED_MODULE_1__[\"initProductPage\"])();\n  const burger = $('#burger');\n  const mobileMenu = $('#mobile-menu');\n  const mobileMenuClose = mobileMenu.find('.olio-header-menu-mobile__close');\n  burger.click(function () {\n    mobileMenu.show(\"fast\");\n  });\n  mobileMenuClose.click(function () {\n    mobileMenu.hide('fast');\n  });\n});\n\n//# sourceURL=webpack:///./source/js/script.js?");
 
 /***/ }),
 
