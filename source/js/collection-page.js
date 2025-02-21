@@ -52,6 +52,23 @@ export const initCollectionPage = () => {
 
   setHandler();
 
+  // sorting
+
+  $('body').on('click', function(event) {
+    if ($(event.target).hasClass('olio-catalog-filters-sorting-selected')) {
+      $('.olio-catalog-filters-sorting-options').toggle();
+    }
+
+    if (!$(event.target).closest('.olio-catalog-filters-sorting-wrapper').length) {
+      $('.olio-catalog-filters-sorting-options').hide();
+    }
+
+    if ($(event.target).hasClass('olio-catalog-filters-sorting-option')) {
+      const value = $(event.target).attr('data-value');
+      $(".olio-catalog-filters-sorting-wrapper").find('select').val(value).change();
+    }
+  });
+
 
 }
 

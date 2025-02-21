@@ -227,23 +227,58 @@ olio-catalog-filters-tags::-webkit-scrollbar {
   }
 }
 
-.olio-catalog-filters-sorting {
+.olio-catalog-filters-sorting-wrapper {
   display: none;
 
   @media (@L) {
-    display: block;
-    width: fit-content;
-    font-family: Raleway;
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 19.6px;
-    letter-spacing: 0.5px;
-    color: rgba(33, 42, 23, 1);
+    display: flex;
+  }
 
-    margin: 0;
-    padding: 0;
-    height: 38px;
-    padding: 10px;
+  & select {
+    display: none;
+  }
+}
+
+.olio-catalog-filters-sorting {
+  position: relative;
+}
+
+.olio-catalog-filters-sorting-selected {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 14px;
+  font-family: Raleway;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 19.6px;
+  letter-spacing: 0.5px;
+  color: rgba(33, 42, 23, 1);
+  border: none;
+  background-color: #FCFCF6;
+  outline: none;
+  cursor: pointer;
+  min-width: 200px;
+}
+
+.olio-catalog-filters-sorting-options {
+  display: none;
+  position: absolute;
+  top: 30px;
+  left: 0;
+  border: 1px solid rgba(110, 115, 92, .25);
+  padding: 10px 0;
+  border-radius: 30px;
+  z-index: 1;
+  background-color: #FCFCF6;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.olio-catalog-filters-sorting-option {
+  padding: 0 20px;
+  &:hover {
+    background-color: rgba(110, 115, 92, .25);
   }
 }
 
