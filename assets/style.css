@@ -565,6 +565,11 @@ body {
     justify-content: space-between;
   }
 }
+@media ((min-width: 960px)) {
+  .olio-catalog-info {
+    justify-content: flex-start;
+  }
+}
 .olio-catalog-info__title {
   font-family: TT Ricordi Allegria Trl;
   font-weight: 400;
@@ -579,6 +584,11 @@ body {
     margin-bottom: 0;
     font-size: 34px;
     line-height: 34px;
+  }
+}
+@media ((min-width: 1280px)) {
+  .olio-catalog-info__title {
+    width: 340px;
   }
 }
 .olio-catalog-info__text {
@@ -598,7 +608,7 @@ body {
 }
 @media ((min-width: 1280px)) {
   .olio-catalog-info__text {
-    width: 680px;
+    width: 700px;
   }
 }
 .olio-catalog-filters {
