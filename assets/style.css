@@ -752,6 +752,7 @@ olio-catalog-filters-tags::-webkit-scrollbar {
 @media ((min-width: 960px)) {
   .olio-product-card {
     width: 340px;
+    height: 100%;
   }
 }
 .olio-product-card-pic-wrapper {
