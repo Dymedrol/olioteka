@@ -699,7 +699,6 @@ olio-catalog-filters-tags::-webkit-scrollbar {
   letter-spacing: 0.5px;
   color: #212a17;
   border: none;
-  background-color: #FCFCF6;
   outline: none;
   cursor: pointer;
   min-width: 200px;
@@ -711,7 +710,7 @@ olio-catalog-filters-tags::-webkit-scrollbar {
   left: 0;
   border: 1px solid rgba(110, 115, 92, 0.25);
   padding: 10px 0;
-  border-radius: 30px;
+  border-radius: 8px;
   z-index: 1;
   background-color: #FCFCF6;
   cursor: pointer;

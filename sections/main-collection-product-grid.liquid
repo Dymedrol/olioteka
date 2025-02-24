@@ -66,7 +66,7 @@
               </label>
               {% assign sorted_values = filter.values | sort: 'label' %}
               {% for value in sorted_values %}
-                <label class='olio-catalog-filters-tags__item !!!' style="order: {{ value.id }};">
+                <label class='olio-catalog-filters-tags__item' style="order: {{ value.id }};">
                   <input data-param-name="{{ value.param_name }}" type="radio" id="" name="tag" value="{{ value.label | escape }}" {% if value.active %}checked{% endif %} />
                   <span>{{ value.label | escape }}</span>
                 </label>
