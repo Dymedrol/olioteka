@@ -584,6 +584,7 @@ body {
     margin-bottom: 0;
     font-size: 34px;
     line-height: 34px;
+    width: 340px;
   }
 }
 @media ((min-width: 1280px)) {
