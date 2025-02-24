@@ -413,6 +413,31 @@ body {
   border-radius: 100px;
   background: #FFFFFF;
 }
+.olio-header-cart .cart-count-bubble {
+  display: inline;
+  position: static;
+  width: auto;
+  height: auto;
+  background-color: transparent;
+  font-family: Raleway;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.5px;
+  color: #646556;
+}
+.olio-header-cart .cart-count-bubble .svg-wrapper {
+  display: none;
+}
+.olio-header-cart__text--wrapper {
+  display: flex;
+  font-family: Raleway;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.5px;
+  color: #646556;
+}
 .olio-header-cart__text {
   font-family: Raleway;
   font-weight: 600;
