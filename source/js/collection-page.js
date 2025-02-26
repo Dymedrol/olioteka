@@ -69,6 +69,15 @@ export const initCollectionPage = () => {
     }
   });
 
+  // Находим элемент с классом olio-catalog-categories__item_active
+  var activeItem = document.querySelector('.olio-catalog-categories__item_active');
+
+  // Проверяем, существует ли этот элемент
+  if (activeItem) {
+    // Прокручиваем контейнер до активного элемента
+    activeItem.scrollIntoView({block: 'nearest'});
+  }
+
 
 }
 
