@@ -37,6 +37,6 @@
   <div class="olio-product-card-info">
     <div class="olio-product-card-info__title">{{ card_product.title }}</div>
     <div class="olio-product-card-info__subtitle">{{ card_product.metafields.custom.cutline }}</div>
-    <div class="olio-product-card-info__price">from {{ card_product.price_min | money_without_trailing_zeros }}</div>
+    <div class="olio-product-card-info__price">{{ card_product.price_min | money_without_trailing_zeros }}</div>
   </div>
 </a>
